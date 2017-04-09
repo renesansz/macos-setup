@@ -1,0 +1,34 @@
+{
+    "window.zoomLevel": 0,
+    "editor.renderWhitespace": true,
+    "editor.minimap.enabled": true,
+    "editor.wordBasedSuggestions": false,
+    "telemetry.enableTelemetry": false,
+    "editor.renderControlCharacters": true,
+    "search.exclude": {
+        "**/node_modules": true,
+        ".build": true,
+        ".tmp": true,
+        ".vscode": true,
+        "**/bower_components": true
+    },
+    "editor.fontSize": 14,
+    "workbench.sideBar.location": "left",
+    // Python Configuration
+    "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+    "typescript.check.tscVersion": false,
+    "path-intellisense.showHiddenFiles": true,
+    "editor.tabCompletion": true,
+    "editor.detectIndentation": true,
+    "editor.wordWrap": "on",
+
+    // Gitlense Configuration
+    "gitlens.blame.annotation.date": "absolute",
+
+    // Git Project Manager Configuration
+    "gitProjectManager.storeRepositoriesBetweenSessions": true,
+
+    // Workbench Configuration
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Material Theme"
+}
