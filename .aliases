@@ -1,0 +1,48 @@
+# Spotlight
+alias disable-spotlight "sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
+alias enable-spotlight "sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
+
+# Postgre
+alias postgres-stop "pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias postgres-start "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+
+# Portforwarding
+alias port-forward-enable-8000 "echo 'rdr pass inet proto tcp from any to any port 80 -> 127.0.0.1 port 8000' | sudo pfctl -ef -"
+alias port-forward-disable "sudo pfctl -F all -f /etc/pf.conf"
+alias port-forward-list "sudo pfctl -s nat"
+
+# Finder
+alias show-files='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hide-files='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+# Fish Shell
+alias fish-edit='vim ~/.config/fish/config.fish'
+alias fish-functions "cd ~/.config/fish/functions"
+alias fish-reload "fish;clear"
+
+# Time Machine
+alias disable-time-machine-local "sudo tmutil disablelocal"
+alias enable-time-machine-local "sudo tmutil enablelocal"
+
+# Git
+alias git-assume-unchanged-list "git ls-files -v|grep '^h'"
+alias gits "git status"
+alias gitb "git branch"
+alias git-clean-merged "git branch --merged | grep -v '\*' | grep -v master | xargs -n 1 git branch -d"
+alias git-clean-merged-remote "git branch --remote --merged | grep origin | grep -v '>' | grep -v master | grep -v develop | xargs -L1 | cut -d"/" -f2- | xargs git push origin --delete"
+alias gitl "git log --oneline --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+# SSH
+alias sshkclear "ssh-add -D"
+alias sshkdefault "ssh-add ~/.ssh/id_rsa"
+alias sshkingenuity "ssh-add ~/.ssh/rene-ingenuity"
+alias sshkpaperpost "ssh-add ~/.ssh/paperpost"
+alias sshkliirn "ssh-add ~/.ssh/liirn"
+alias sshklist "ssh-add -l"
+
+# Misc
+alias brew-cask-upgrade "brew cask list | xargs brew cask install --force"
+alias .. 'cd ..'
+alias lh 'ls -lhaG'
+alias checkconn "ping 8.8.8.8"
+alias flushcache="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;say cache flushed"
