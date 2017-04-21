@@ -34,10 +34,6 @@ alias gitl "git log --oneline --graph --abbrev-commit --decorate --date=relative
 
 # SSH
 alias sshkclear "ssh-add -D"
-alias sshkdefault "ssh-add ~/.ssh/id_rsa"
-alias sshkingenuity "ssh-add ~/.ssh/rene-ingenuity"
-alias sshkpaperpost "ssh-add ~/.ssh/paperpost"
-alias sshkliirn "ssh-add ~/.ssh/liirn"
 alias sshklist "ssh-add -l"
 
 # Misc
