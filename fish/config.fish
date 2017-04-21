@@ -5,25 +5,27 @@
 # General Directories
 set -U WORKSPACE "$HOME/Workspace"
 set -U CODEGROUNDS "$HOME/CodeGrounds"
+set -U INGENUITY "$WORKSPACE/Ingenuity"
+set -U FREELANCE_DIR "$WORKSPACE/Freelance"
 
 # Ingenuity Workspace Directories
-set -U PAPERPOST_DIR "/Users/renesansz/Workspace/Freelance/Paperpost/paperpost_api"
-set -U BRANCH_IO_DIR "$HOME/Workspace/Ingenuity/BranchMetrics"
-set -U AVARIO_DIR "$HOME/Workspace/Ingenuity/Avario"
-set -U SUB_SYNC_DIR "$HOME/Workspace/Ingenuity/Sub-Sync"
-set -U CLOUD_SUITE_DIR "$HOME/Workspace/Ingenuity/Cloudsuite"
-set -U ENGAGE_BACKEND_DIR "$HOME/Workspace/Ingenuity/Engage/backend/src"
-set -U ENGAGE_FRONTEND_DIR "$HOME/Workspace/Ingenuity/Engage/frontend/src"
-set -U ENGAGE_BACKEND_OLD "$HOME/Workspace/Ingenuity/Engage/engage-old/src"
+set -U BRANCH_IO_DIR "$INGENUITY/BranchMetrics"
+set -U AVARIO_DIR "$INGENUITY/Avario"
+set -U SUB_SYNC_DIR "$INGENUITY/Sub-Sync"
+set -U CLOUD_SUITE_DIR "$INGENUITY/Cloudsuite"
+set -U ENGAGE_BACKEND_DIR "$INGENUITY/Engage/backend/src"
+set -U ENGAGE_FRONTEND_DIR "$INGENUITY/Engage/frontend/src"
+set -U ENGAGE_BACKEND_OLD "$INGENUITY/Engage/engage-old/src"
 set -U CLOUD_WAVE_DIR "$HOME/Workspace/Freelance/Cloud\ Wave\ Technology"
-set -U BRANCH_METRICS_DIR "$HOME/Workspace/Ingenuity/BranchMetrics"
-set -U SUB_SYNC_DIR "$HOME/Workspace/Ingenuity/Sub-Sync"
-set -U GRIN_DIR "$HOME/Workspace/Ingenuity/Grin"
-set -U PROJECT_D_DIR "$HOME/Workspace/Ingenuity/Project-D"
-set -U LIIRN_DIR "$HOME/Workspace/Ingenuity/LiiRN"
+set -U BRANCH_METRICS_DIR "$INGENUITY/BranchMetrics"
+set -U SUB_SYNC_DIR "$INGENUITY/Sub-Sync"
+set -U GRIN_DIR "$INGENUITY/Grin"
+set -U PROJECT_D_DIR "$INGENUITY/Project-D"
+set -U LIIRN_DIR "$INGENUITY/LiiRN"
+set -U DYLN_DIR "$INGENUITY/DYLN"
 
 # Freelance Workspace Directory 
-set -U FREELANCE_DIR "$WORKSPACE/Freelance"
+set -U PAPERPOST_DIR "/Users/renesansz/Workspace/Freelance/Paperpost/paperpost_api"
 
 ###########
 # SCRIPTS #
@@ -60,8 +62,8 @@ set -gx PATH /Users/renesansz/Library/Android/sdk/tools $PATH
 alias disable-spotlight "sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
 alias enable-spotlight "sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist"
 alias fish-functions "cd ~/.config/fish/functions"
-alias postgres-stop "pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-alias postgres-start "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias postgres-stop "pg_ctl -D /usr/local/var/postgres9.6 stop -s -m fast"
+alias postgres-start "pg_ctl -D /usr/local/var/postgres9.6 -l logfile start"
 alias brew-cask-upgrade "brew cask list | xargs brew cask install --force"
 alias .. 'cd ..'
 alias lh 'ls -lhaG'
@@ -87,10 +89,6 @@ alias gitl "git log --oneline --graph --abbrev-commit --decorate --date=relative
 
 # SSH
 alias sshkclear "ssh-add -D"
-alias sshkdefault "ssh-add ~/.ssh/id_rsa"
-alias sshkingenuity "ssh-add ~/.ssh/rene-ingenuity"
-alias sshkpaperpost "ssh-add ~/.ssh/paperpost"
-alias sshkliirn "ssh-add ~/.ssh/liirn"
 alias sshklist "ssh-add -l"
 
 # Start Docker
@@ -110,5 +108,6 @@ set -gx DOCKER_MACHINE_NAME "default";
 # Load oh-my-fish configuration.
 #source $OMF_PATH/init.fish
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -g fish_prompt_pwd_dir_length 10 
 
 #test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
