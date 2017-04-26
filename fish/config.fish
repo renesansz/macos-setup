@@ -64,6 +64,8 @@ alias enable-spotlight "sudo launchctl load -w /System/Library/LaunchDaemons/com
 alias fish-functions "cd ~/.config/fish/functions"
 alias postgres-stop "pg_ctl -D /usr/local/var/postgres9.6 stop -s -m fast"
 alias postgres-start "pg_ctl -D /usr/local/var/postgres9.6 -l logfile start"
+alias mysql-start "brew services start mysql"
+alias mysql-stop "brew services stop mysql"
 alias brew-cask-upgrade "brew cask list | xargs brew cask install --force"
 alias .. 'cd ..'
 alias lh 'ls -lhaG'
