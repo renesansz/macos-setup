@@ -1,10 +1,10 @@
 # Renesansz' Dotfiles
 
-## Installation
+## 💻 Installation
 
 **Warning: All the scripts I've written caters to my needs. So before running, you might want to check out the source code first and emit the thing(s) you won't be needing.**
 
-# Feedback
+##  📣 Feedback
 
 Suggestion(s) and improvement(s) are [welcome](https://github.com/renesansz/macos-setup/issues)!
 
